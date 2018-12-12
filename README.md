@@ -1,4 +1,6 @@
 # R Package - CloneHunter
+Hacked to change the sequences of barcode recognition and allow for variable length barcodes.
+
 This is a wrapped package of the above workflow with additional checks on the Celltag Library sequences. This package have a dependency on R version (R >= 3.5.0). This can be used as an alternative approach for this pipeline.
 
 (You might need to install devtools to be able to install from Github first)
