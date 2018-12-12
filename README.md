@@ -10,7 +10,7 @@ install.packages("devtools")
 Install the package from GitHub.
 ```r
 library("devtools")
-devtools::install_github("morris-lab/CloneHunter")
+devtools::install_github("mtvector/CloneHunter")
 ```
 Load the package
 ```r
