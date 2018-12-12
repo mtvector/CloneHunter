@@ -13,7 +13,7 @@
 #' @examples
 #' CellTagExtraction("data.fastq", "v1", "~/Desktop/whitelist.txt")
 #'
-CellTagExtraction <- function(fastq.bam.input, celltag.version, extraction.output.filename,short.nt.before.tag = "CCGGT",short.nt.after.tag <- "GAATTC",len.barcode=18, save.fullTag = TRUE, save.onlyTag = TRUE) {
+CellTagExtraction <- function(fastq.bam.input, celltag.version, extraction.output.filename,short.nt.before.tag = "CCGGT",short.nt.after.tag = "GAATTC",len.barcode=18, save.fullTag = TRUE, save.onlyTag = TRUE) {
   # Set up the output filenames and path
   output.file <- extraction.output.filename
   output.file.dirname <- dirname(output.file)
