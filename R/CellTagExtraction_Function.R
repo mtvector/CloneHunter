@@ -25,7 +25,7 @@ CellTagExtraction <- function(fastq.bam.input, celltag.version, extraction.outpu
   if (endsWith(fastq.bam.input, "fastq")) {
     con <- file(fastq.bam.input, "r")
 
-    # Get the sequences containing the tags (with both full tag region and only 8nt tag)
+    # Get the sequences containing the tags (with both full tag region and only len.barcodent tag)
     seq.list <- c()
     filtered.sequences <- c()
     full.tag.seq <- c()
@@ -43,9 +43,9 @@ CellTagExtraction <- function(fastq.bam.input, celltag.version, extraction.outpu
 
         filtered.sequences <- c(filtered.sequences, curr.f.seq)
         start.loc <- reg.rslt[contain.idx]
-        end.loc <- start.loc + nchar(short.nt.before.tag) + 8 + nchar(short.nt.after.tag) - 1
+        end.loc <- start.loc + nchar(short.nt.before.tag) + len.barcode + nchar(short.nt.after.tag) - 1
         curr.full.tag <- substr(curr.f.seq, start = start.loc, stop = end.loc)
-        only.tag <- substr(curr.full.tag, start = (nchar(short.nt.before.tag) + 1), stop = (nchar(short.nt.before.tag) + 8))
+        only.tag <- substr(curr.full.tag, start = (nchar(short.nt.before.tag) + 1), stop = (nchar(short.nt.before.tag) + len.barcode))
         full.tag.seq <- c(full.tag.seq, curr.full.tag)
         only.tag.seq <- c(only.tag.seq, only.tag)
       }
